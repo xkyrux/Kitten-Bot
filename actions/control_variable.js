@@ -14,7 +14,7 @@ name: "Control Variable",
 // This is the section the action will fall into.
 //---------------------------------------------------------------------
 
-section: "Other Stuff",
+section: "Variable Things",
 
 //---------------------------------------------------------------------
 // Action Subtitle
@@ -40,6 +40,26 @@ variableStorage: function(data, varType) {
 },
 
 //---------------------------------------------------------------------
+// DBM Mods Manager Variables (Optional but nice to have!)
+//
+// These are variables that DBM Mods Manager uses to show information
+// about the mods for people to see in the list.
+//---------------------------------------------------------------------
+
+// Who made the mod (If not set, defaults to "DBM Mods")
+author: "DBM & MrGold",
+
+// The version of the mod (Defaults to 1.0.0)
+version: "1.9.5", //Added in 1.9.5
+
+// A short description to show on the mod line for this mod (Must be on a single line)
+short_description: "Controls the value for an Existing Variable or a New Variable",
+
+// If it depends on any other mods by name, ex: WrexMODS if the mod uses something from WrexMods
+
+//---------------------------------------------------------------------
+
+//---------------------------------------------------------------------
 // Action Fields
 //
 // These are the fields for the action. These fields are customized
@@ -47,7 +67,7 @@ variableStorage: function(data, varType) {
 // are also the names of the fields stored in the action's JSON data.
 //---------------------------------------------------------------------
 
-fields: ["storage", "varName", "changeType", "value"],
+fields: ["changeType", "value", "storage", "varName"],
 
 //---------------------------------------------------------------------
 // Command HTML
@@ -67,6 +87,20 @@ fields: ["storage", "varName", "changeType", "value"],
 
 html: function(isEvent, data) {
 	return `
+<div><p>This action has been modified by DBM Mods</p></div>
+<div>
+	<div style="padding-top: 12px; width: 35%;">
+		Control Type:<br>
+		<select id="changeType" class="round">
+			<option value="0" selected>Set Value</option>
+			<option value="1">Add Value</option>
+		</select>
+	</div>
+</div><br>
+<div>
+	Value:<br>
+	<textarea id="value" rows="7" placeholder="Insert what you want here..." style="width: 99%; font-family: monospace; white-space: nowrap; resize: none;"></textarea>
+</div><br>
 <div>
 	<div style="float: left; width: 35%;">
 		Store In:<br>
@@ -77,19 +111,6 @@ html: function(isEvent, data) {
 	<div id="varNameContainer" style="float: right; width: 60%;">
 		Variable Name:<br>
 		<input id="varName" class="round" type="text">
-	</div>
-</div><br><br><br>
-<div style="padding-top: 8px;">
-	<div style="float: left; width: 35%;">
-		Control Type:<br>
-		<select id="changeType" class="round">
-			<option value="0" selected>Set Value</option>
-			<option value="1">Add Value</option>
-		</select>
-	</div>
-	<div style="float: right; width: 60%;">
-		Value:<br>
-		<input id="value" class="round" type="text" name="is-eval"><br>
 	</div>
 </div>`
 },
@@ -102,8 +123,7 @@ html: function(isEvent, data) {
 // functions for the DOM elements.
 //---------------------------------------------------------------------
 
-init: function() {
-},
+init: function() {},
 
 //---------------------------------------------------------------------
 // Action Bot Function

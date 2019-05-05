@@ -27,6 +27,27 @@ subtitle: function(data) {
 },
 
 //---------------------------------------------------------------------
+	// DBM Mods Manager Variables (Optional but nice to have!)
+	//
+	// These are variables that DBM Mods Manager uses to show information
+	// about the mods for people to see in the list.
+	//---------------------------------------------------------------------
+
+	// Who made the mod (If not set, defaults to "DBM Mods")
+	author: "DBM & ZockerNico",
+
+	// The version of the mod (Defaults to 1.0.0)
+	version: "1.9.5", //Added in 1.9.5
+
+	// A short description to show on the mod line for this mod (Must be on a single line)
+	short_description: "Skip Queue is now compatible with the Loop Queue mod.",
+
+	// If it depends on any other mods by name, ex: WrexMODS if the mod uses something from WrexMods
+
+
+//---------------------------------------------------------------------
+
+//---------------------------------------------------------------------
 // Action Fields
 //
 // These are the fields for the action. These fields are customized
@@ -54,10 +75,21 @@ fields: ["amount"],
 
 html: function(isEvent, data) {
 	return `
-<div style="float: left; width: 80%;">
-	Amount to Skip:<br>
+<div>
+	<p>
+		This action has been modified by DBM Mods.
+	</p>
+</div>
+<div style="float: left; width: 95%;">
+	<br>Amount to Skip:<br>
 	<input id="amount" class="round" value="1">
-</div>`;
+</div>
+<div style="width: 100%;">
+	<p>
+		<br><br><br><br><br>Please put the Welcome action into a Bot Initalization event to be able to store the current song!
+	</p>
+</div>
+`
 },
 
 //---------------------------------------------------------------------
@@ -84,21 +116,32 @@ action: function(cache) {
 	const Audio = this.getDBM().Audio;
 	const server = cache.server;
 	let queue;
+	let playingnow;
+	let loopQueue;
 	if(server) {
 		queue = Audio.queue[server.id];
-	} 
+		if(Audio.playingnow !== undefined) {
+			playingnow = Audio.playingnow[server.id];
+			loopQueue = Audio.loopQueue[server.id] || false;
+		};
+	};
 	if(queue) {
 		const amount = parseInt(this.evalMessage(data.amount, cache));
+		let lastItem = playingnow;
 		let finalItem;
 		for(let i = 0; i < amount; i++) {
 			if(queue.length > 0) {
 				finalItem = queue.shift();
-			}
-		}
+				if(loopQueue === true) {
+					queue.push(lastItem);
+					lastItem = finalItem;
+				};
+			};
+		};
 		if(finalItem) {
 			Audio.playItem(finalItem, server.id);
-		}
-	}
+		};
+	};
 	this.callNextAction(cache);
 },
 
