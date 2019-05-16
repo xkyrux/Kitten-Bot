@@ -1,0 +1,1 @@
+Sets the mentioned channel as the suggestion channel! *(User must have **Administrator** to use this command)*

@@ -1,0 +1,1 @@
+Automatically sets up roles and features that the bot requires to function properly! *(User requires **Administrator** to use this command)*

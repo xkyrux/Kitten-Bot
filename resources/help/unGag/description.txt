@@ -1,0 +1,1 @@
+Un-gags the mentioned user if they are gagged! *(Mentioned user must be owned by you)*

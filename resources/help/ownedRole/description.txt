@@ -1,0 +1,1 @@
+Sets the mentioned role as the owner role for this server only! *(User requires **Manage Roles** to use this command)*

@@ -1,0 +1,1 @@
+Displays the users input in an embed message! *(User requires **Manage Messages** to use this command)*

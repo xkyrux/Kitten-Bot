@@ -1,0 +1,1 @@
+Sends your suggestion to the suggestion channel! **NOTE**: A suggestion channel must be set!

@@ -1,0 +1,1 @@
+Resets the mentioned users **pet** and **owner** stats! *(User requires **Administrator** to use this command)*
