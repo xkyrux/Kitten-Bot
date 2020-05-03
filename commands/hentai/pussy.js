@@ -2,15 +2,13 @@ const { MessageEmbed } = require('discord.js');
 const Neko = require('nekos.life');
 
 module.exports = {
-    name: "futanari",
-    aliases: ['futa'],
-    category: "NSFW",
-    description: "Sends a random futanari image.",
-    usage: `${(process.env.PREFIX)}futanari`,
-    usage2: `${(process.env.PREFIX)}futa`,
+    name: "pussy",
+    category: "hentai",
+    description: "Sends a random pussy image.",
+    usage: `${(process.env.PREFIX)}pussy`,
     run: async (client, message, args) => {
         const neko = new Neko();
-        const url = await neko.nsfw.futanari();
+        const url = await neko.nsfw.pussy();
 
         if(!message.channel.nsfw) {
             return message.channel.send('❌NSFW commands can only be used in channels marked as NSFW').then(m => m.delete({timeout: 10000}));
