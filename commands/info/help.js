@@ -19,11 +19,11 @@ module.exports = {
 function helpMSG(client, message) {
     const embed = new MessageEmbed()
         .setColor(process.env.COLOR)
-        .setTitle('Legally Kinky Help')
+        .setTitle('Kitten Bot Help')
         .setThumbnail(client.user.avatarURL())
         .setDescription(`For a full list of commands, please type \`${process.env.PREFIX}commands\` \n\nTo see more info about a specific command, please type \`${process.env.PREFIX}help <command>\` without the \`<>\``)
         .addField('About', `**${(client.user.username)}** is a full NSFW bot. Our main focus is handling pet play relationships between users in the same server as well as across different servers! \n\nYou can claim a user as your pet by using \`${(process.env.PREFIX)}claim <@user>\` and that user will be able to accept or not.\n\nAside from pet play, we also have NSFW commands for actions and images/gifs!`)
-        .addField('Links', "[Our Discord Server](https://discord.gg/yxeSAhN)")
+        .addField('Links', "[Our Discord Server](https://discord.gg/yxeSAhN) \n[Kitte Bot Support](https://discord.gg/6e5CuRt) \n[Invite Bot](https://discordapp.com/api/oauth2/authorize?client_id=605233561314000927&permissions=470150209&scope=bot)")
         .setFooter('Created by Sleepless Kyru#7615');
     message.channel.send(embed);
 }
