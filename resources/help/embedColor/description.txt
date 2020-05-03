@@ -1,1 +1,0 @@
-Sets the color for embed messages for this server only! __**HEX CODE ONLY**__ *(User requires **Manage Guild** to use this command)*

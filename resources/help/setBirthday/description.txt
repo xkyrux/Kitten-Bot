@@ -1,1 +1,0 @@
-Sets your user birthday for the bot

@@ -1,1 +1,0 @@
-Sets the mentioned role as the male role in this server only! *(User must have **Manage Roles** to use this command)*

@@ -1,1 +1,0 @@
-Claims the mentioned user as your pet! *(The user must have the ownable role if your server has one)*

@@ -1,1 +1,0 @@
-Sets the slutRole for the server. This role is needed so that users can use NSFW commands on each other or share their pet with others! *(User requires **Manage Roles** to use this command)*

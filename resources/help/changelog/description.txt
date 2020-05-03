@@ -1,1 +1,0 @@
-Displays the latest changes to the bot so you can keep up-to-date!

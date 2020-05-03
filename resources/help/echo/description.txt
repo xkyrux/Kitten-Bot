@@ -1,1 +1,0 @@
-Repeats what the command author says! *(User requires **Manage Messages** to use this command)*

@@ -1,1 +1,0 @@
-Sets the mentioned role as the owner role for this server only! **NOTE**: This is not "Owner" of the server, it is the Owner of the user that you `claim`... *(User requires **Manage Roles** to use this command)*

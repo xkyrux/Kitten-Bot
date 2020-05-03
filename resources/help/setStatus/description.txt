@@ -1,1 +1,0 @@
-Sets your user status for the bot!
