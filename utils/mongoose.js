@@ -13,7 +13,7 @@ module.exports = {
             family: 4
         };
         
-        mongoose.connect('mongodb+srv://admin:Jaekobup1@cluster0-b0u5k.mongodb.net/legally_kinky?retryWrites=true&w=majority', dbOptions);
+        mongoose.connect('mongodb+srv://admin:Jaekobup1@cluster0-b0u5k.mongodb.net/kitten_bot?retryWrites=true&w=majority', dbOptions);
         mongoose.set('useFindAndModify', false);
         mongoose.Promise = global.Promise;
         
